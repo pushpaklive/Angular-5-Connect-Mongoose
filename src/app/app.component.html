@@ -1,0 +1,33 @@
+<form #userForm="ngForm" ngSubmit="onSave(userForm.value)" novalidate>
+  <table border="1">
+    <tr>
+      <td>Name</td>
+      <td>
+        <input name="id" type="hidden" [(ngModel)]="id" />
+        <input name="name" type="text" [(ngModel)]="name" />       
+      </td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>
+        <input type="text" name="address" [(ngModel)]="address" />
+      </td>
+    </tr>
+  </table>
+  <button (click)="onSave(userForm.value)">Save</button>
+
+  <table border="1">
+    <tr>
+      <td>id</td>
+      <td>Name</td>
+      <td>Address</td>
+    </tr>
+    <tr *ngFor="let kk of repData; let i = index;">
+      <td>{{i+1}}</td>
+      <td>{{kk.name}}</td>
+      <td>{{kk.address}}</td>
+      <td><a (click)="edit(kk)" style="color: dodgerblue;">Edit</a></td>
+      <td><a (click)="delete(kk._id)" style="color:  red;">Delete</a></td>
+    </tr>
+  </table>
+</form>
