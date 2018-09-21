@@ -42,7 +42,7 @@ app.post("/api/SaveUser", function (req, res) {
         })
     }
     else{
-        model.findByIdAndUpdate(req.body.id, function(err, doc){
+        model.findByIdAndUpdate(req.body.id, {name: req.body.name, address: req.body.address}, function(err, doc){
             if(err)
             console.log("findByIdAndUpdate error here : err : "+err);
             res.send("Document updated successfully!!!!!");

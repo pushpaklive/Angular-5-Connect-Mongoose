@@ -12,7 +12,9 @@ export class CommonService {
 
   saveUser(user){
     return this.http.post("http://localhost:8080/api/SaveUser/", user)
-                    .map((res : Response) => res.json());
+                    .map((res : Response) => {
+                      res.json();
+                    });
   }
 
   getUsers(){

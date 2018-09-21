@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     user.mode = this.valButton;
 
     this.commonService.saveUser(user).subscribe(data => {
-      alert("data.data**** : " + data.data);
+      alert("data.data**** : " + data);
       this.ngOnInit();
     }, err => {
       console.log("Error in calling this.commonService.saveUser() : err : ", err)
