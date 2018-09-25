@@ -5,7 +5,7 @@ var mongo = require('mongoose');
 
 var app = express();
 
-var db = mongo.connect("mongodb://alphauser:alphauser1@ds239071.mlab.com:39071/pushpak-db", function (err, response) {
+var db = mongo.connect("mongodb://username:password@ds239071.mlab.com:39071/db-name-on-mlabs-or-wherever", function (err, response) {
     if (err)
         console.log("Error in connecting to pushpak-db : error is : " + err);
     console.log("Successfully connected to " + db + " : response : " + response);
